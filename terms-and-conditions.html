@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms & Conditions — MysticLand</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #0D0A1A;
+      color: #F0EAFF;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1A1030, #0D0A1A);
+      border-bottom: 1px solid #C9A84C44;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    header .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #C9A84C;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    header .subtitle {
+      font-size: 14px;
+      color: #9E8B75;
+      font-style: italic;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .page-title {
+      font-size: 30px;
+      color: #C9A84C;
+      font-weight: bold;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .last-updated {
+      font-size: 13px;
+      color: #9E8B75;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #251840;
+    }
+
+    .intro-box {
+      background: #1A1030;
+      border-left: 4px solid #C9A84C;
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 15px;
+      color: #D0C8E8;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #C9A84C;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #251840;
+      letter-spacing: 0.5px;
+    }
+
+    h3 {
+      font-size: 16px;
+      color: #E8B86D;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #D0C8E8;
+      margin-bottom: 14px;
+    }
+
+    ul {
+      margin: 10px 0 16px 20px;
+    }
+
+    ul li {
+      font-size: 15px;
+      color: #D0C8E8;
+      margin-bottom: 8px;
+    }
+
+    ul li::marker {
+      color: #C9A84C;
+    }
+
+    .highlight-box {
+      background: #1A1030;
+      border: 1px solid #C9A84C33;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .warning-box {
+      background: #2A0A0A;
+      border: 1px solid #C0392B55;
+      border-left: 4px solid #C0392B;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .warning-box p {
+      color: #F5C6C6;
+      margin-bottom: 0;
+    }
+
+    .subscription-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .subscription-table th {
+      background: #251840;
+      color: #C9A84C;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+    }
+
+    .subscription-table td {
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #D0C8E8;
+      font-family: Arial, sans-serif;
+      border-bottom: 1px solid #251840;
+    }
+
+    .subscription-table tr:nth-child(even) td {
+      background: #1A1030;
+    }
+
+    .subscription-table tr:nth-child(odd) td {
+      background: #150D25;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #1A1030, #251840);
+      border: 1px solid #C9A84C55;
+      border-radius: 12px;
+      padding: 28px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      border-bottom: none;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .contact-box a {
+      color: #C9A84C;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section-number {
+      display: inline-block;
+      background: #C9A84C;
+      color: #0D0A1A;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 26px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    footer {
+      background: #1A1030;
+      border-top: 1px solid #C9A84C22;
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: #9E8B75;
+      margin-top: 64px;
+    }
+
+    footer a {
+      color: #C9A84C;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    @media (max-width: 600px) {
+      .page-title { font-size: 24px; }
+      h2 { font-size: 18px; }
+      .container { padding: 32px 16px; }
+      .subscription-table { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🎭 MysticLand</div>
+  <div class="subtitle">Where mystery meets desire</div>
+</header>
+
+<div class="container">
+
+  <div class="page-title">Terms & Conditions</div>
+  <div class="last-updated">Last Updated: August 1, 2026 &nbsp;|&nbsp; Effective Date: August 1, 2026</div>
+
+  <div class="intro-box">
+    Please read these Terms and Conditions carefully before using MysticLand. By downloading, installing, or using the MysticLand app, you confirm that you are at least 18 years old and agree to be bound by these Terms. If you do not agree, do not use MysticLand.
+  </div>
+
+  <!-- 1 -->
+  <h2><span class="section-number">1</span> Acceptance of Terms</h2>
+  <p>These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User") and MysticLand ("we", "us", "our") governing your use of the MysticLand mobile application ("App"). By accessing or using the App, you agree to these Terms in full.</p>
+  <p>We reserve the right to modify these Terms at any time. Continued use of the App after changes constitutes acceptance of the updated Terms.</p>
+
+  <!-- 2 -->
+  <h2><span class="section-number">2</span> Eligibility</h2>
+  <div class="warning-box">
+    <p>⛔ <strong>You must be at least 18 years of age to use MysticLand.</strong> By using this App, you confirm and warrant that you are 18 years of age or older. If we discover that a user is under 18, we will immediately terminate their account without notice and delete all associated data. Creating an account on behalf of a minor is strictly prohibited.</p>
+  </div>
+  <p>By creating an account, you also confirm that:</p>
+  <ul>
+    <li>You are legally permitted to use dating apps in your jurisdiction</li>
+    <li>You will use MysticLand only for lawful purposes</li>
+    <li>All information you provide is accurate and truthful</li>
+    <li>You are not a convicted sex offender</li>
+  </ul>
+
+  <!-- 3 -->
+  <h2><span class="section-number">3</span> Account Registration</h2>
+  <h3>3.1 Google Sign-In</h3>
+  <p>MysticLand uses Google Sign-In for account creation. By signing in with Google, you grant us access to your Google email address for account identification purposes only. Your Google email is never displayed to other users.</p>
+
+  <h3>3.2 Anonymous Username</h3>
+  <p>You will be assigned or create an anonymous username. You are responsible for maintaining the confidentiality of your account and for all activities that occur under your account.</p>
+
+  <h3>3.3 Face Verification</h3>
+  <p>All users are required to complete a one-time face verification before accessing the App. This is mandatory and non-skippable. The purpose is to confirm you are a real human being and to prevent fake profiles. Your verification selfie is never stored or shown to other users.</p>
+
+  <h3>3.4 One Account Per Person</h3>
+  <p>Each person may maintain only one MysticLand account. Creating multiple accounts is a violation of these Terms and may result in all accounts being permanently banned.</p>
+
+  <!-- 4 -->
+  <h2><span class="section-number">4</span> User Conduct & Community Guidelines</h2>
+  <p>MysticLand is a community built on respect, anonymity, and genuine connection. By using MysticLand, you agree to follow these Community Guidelines at all times:</p>
+
+  <h3>4.1 You MUST NOT:</h3>
+  <ul>
+    <li>Upload nude, partially nude, or sexually explicit photos to your public profile</li>
+    <li>Share contact information (phone numbers, Instagram, WhatsApp, Snapchat) on your public profile or in photos</li>
+    <li>Harass, bully, threaten, or abuse other users</li>
+    <li>Impersonate another person or create a fake profile</li>
+    <li>Use MysticLand for commercial solicitation, advertising, or spam</li>
+    <li>Share photos of other people without their consent</li>
+    <li>Post content that promotes violence, hatred, or discrimination</li>
+    <li>Attempt to hack, scrape, or reverse-engineer the App</li>
+    <li>Use the App for any illegal purpose under Indian law</li>
+    <li>Upload photos containing watermarks, phone numbers, or promotional text</li>
+    <li>Attempt to screenshot or record other users' private content</li>
+  </ul>
+
+  <h3>4.2 Photo Guidelines</h3>
+  <p>Profile photos must:</p>
+  <ul>
+    <li>Show a clear, recognizable photo (no group shots as main photo)</li>
+    <li>Not contain contact information or social media handles</li>
+    <li>Not be offensive, rude, or disrespectful</li>
+    <li>Not contain any form of promotion or solicitation</li>
+  </ul>
+
+  <h3>4.3 Sensitive Content</h3>
+  <p>Users who enable the Sensitive Content setting confirm they are adults and consent to viewing mature content shared by other adult users. Enabling this setting does not permit nude or illegal content — our Community Guidelines still apply.</p>
+
+  <!-- 5 -->
+  <h2><span class="section-number">5</span> Subscription Plans & Payments</h2>
+
+  <h3>5.1 Free & Premium Plans</h3>
+  <p>MysticLand is free to download and use with limited features. Premium subscriptions unlock additional features. The following plans are available:</p>
+
+  <table class="subscription-table">
+    <tr>
+      <th>Plan</th>
+      <th>Duration</th>
+      <th>Price</th>
+      <th>Per Week</th>
+    </tr>
+    <tr>
+      <td>Weekly</td>
+      <td>7 Days</td>
+      <td>₹199</td>
+      <td>₹199</td>
+    </tr>
+    <tr>
+      <td>Monthly</td>
+      <td>30 Days</td>
+      <td>₹599</td>
+      <td>₹149.75</td>
+    </tr>
+    <tr>
+      <td>3 Months</td>
+      <td>90 Days</td>
+      <td>₹999</td>
+      <td>₹83.25</td>
+    </tr>
+    <tr>
+      <td>6 Months</td>
+      <td>180 Days</td>
+      <td>₹1,499</td>
+      <td>₹62.46</td>
+    </tr>
+    <tr>
+      <td>1 Year</td>
+      <td>365 Days</td>
+      <td>₹1,999</td>
+      <td>₹38.44</td>
+    </tr>
+  </table>
+
+  <p>All prices are in Indian Rupees (INR) and inclusive of applicable taxes.</p>
+
+  <h3>5.2 Auto-Renewal</h3>
+  <div class="highlight-box">
+    <p>⚠️ Subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before the renewal date. You will be charged the same price as your current plan upon renewal.</p>
+  </div>
+
+  <h3>5.3 Payment Processing</h3>
+  <p>All payments are processed securely through Google Play Store billing. Supported payment methods include UPI, PhonePe, Google Pay, BHIM, and debit/credit cards. By making a payment, you agree to Google Play's Terms of Service. When you tap Subscribe, you will be redirected to the Google Play billing screen to complete your purchase safely.</p>
+
+  <h3>5.4 Cancellation</h3>
+  <p>You may cancel your subscription at any time through:</p>
+  <ul>
+    <li>MysticLand App → Settings → Manage Subscription → Cancel</li>
+    <li>Emailing mysticland.app@gmail.com</li>
+  </ul>
+  <p>Cancellation takes effect at the end of the current billing period. You will retain premium access until the period ends.</p>
+
+  <h3>5.5 Refund Policy</h3>
+  <p>All subscription purchases are final and non-refundable, except where required by applicable law. If you believe you were charged incorrectly, contact us at mysticland.app@gmail.com within 7 days of the charge.</p>
+
+  <h3>5.6 Premium Features</h3>
+  <p>Premium subscription unlocks the following features:</p>
+  <ul>
+    <li>Unlimited likes per day</li>
+    <li>Exclusive Blind Date feature</li>
+    <li>View who liked your profile</li>
+    <li>Access to verified profiles matching</li>
+    <li>Secure photo sharing (auto-destroy after view)</li>
+    <li>Super likes (⚡)</li>
+    <li>Travel Mode — connect beyond your city</li>
+    <li>Priority placement in search results</li>
+  </ul>
+
+  <!-- 6 -->
+  <h2><span class="section-number">6</span> Intellectual Property</h2>
+  <p>All content, design, graphics, logos, code, and features of MysticLand are the exclusive intellectual property of MysticLand and are protected under applicable Indian copyright and trademark laws.</p>
+  <p>You may not copy, reproduce, distribute, modify, or create derivative works of any part of MysticLand without our express written permission.</p>
+  <p><strong>Your Content:</strong> You retain ownership of photos and text you upload to MysticLand. By uploading content, you grant MysticLand a non-exclusive, royalty-free license to display your content within the app for the purpose of operating the service.</p>
+
+  <!-- 7 -->
+  <h2><span class="section-number">7</span> Privacy</h2>
+  <p>Your use of MysticLand is also governed by our Privacy Policy, which is incorporated into these Terms by reference. Please read our <a href="privacy-policy.html" style="color:#C9A84C;">Privacy Policy</a> carefully.</p>
+
+  <!-- 8 -->
+  <h2><span class="section-number">8</span> Disclaimer of Warranties</h2>
+  <p>MysticLand is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that:</p>
+  <ul>
+    <li>The App will be uninterrupted or error-free</li>
+    <li>All users are who they claim to be</li>
+    <li>The App will meet your specific requirements</li>
+    <li>Any matches made through the App will result in any particular outcome</li>
+  </ul>
+  <p>We strongly encourage users to exercise caution and good judgment when interacting with other users online and offline.</p>
+
+  <!-- 9 -->
+  <h2><span class="section-number">9</span> Limitation of Liability</h2>
+  <p>To the maximum extent permitted by applicable law, MysticLand shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the App, including but not limited to:</p>
+  <ul>
+    <li>Loss of data or privacy</li>
+    <li>Emotional distress from interactions with other users</li>
+    <li>Any harm resulting from meeting other users in person</li>
+    <li>Unauthorized access to your account</li>
+  </ul>
+  <p><strong>Safety Warning:</strong> If you choose to meet another user in person, always meet in a public place, tell a trusted friend or family member, and take appropriate safety precautions. MysticLand is not responsible for any incidents that occur during in-person meetings.</p>
+
+  <!-- 10 -->
+  <h2><span class="section-number">10</span> Account Termination</h2>
+  <h3>10.1 By You</h3>
+  <p>You may delete your account at any time through Settings → Danger Zone → Delete Account Permanently. All your data will be permanently deleted within 30 days.</p>
+
+  <h3>10.2 By MysticLand</h3>
+  <p>We reserve the right to suspend or permanently ban any account without notice for:</p>
+  <ul>
+    <li>Violation of these Terms or Community Guidelines</li>
+    <li>Creating fake or misleading profiles</li>
+    <li>Harassing or abusing other users</li>
+    <li>Uploading prohibited content</li>
+    <li>Being under 18 years of age</li>
+    <li>Any fraudulent or illegal activity</li>
+    <li>Attempting to manipulate or exploit the platform</li>
+  </ul>
+  <p>Banned users are not entitled to a refund of any unused subscription period.</p>
+
+  <!-- 11 -->
+  <h2><span class="section-number">11</span> Reporting & Moderation</h2>
+  <p>MysticLand takes user safety seriously. You can report any user or content that violates our Community Guidelines directly within the app. We review all reports and take appropriate action.</p>
+  <p>By using the App, you agree that we may monitor content for Community Guidelines violations. However, we are not obligated to monitor all content and are not responsible for content posted by users.</p>
+
+  <!-- 12 -->
+  <h2><span class="section-number">12</span> Discreet Mode</h2>
+  <p>MysticLand's Discreet Mode feature allows you to change the app icon and enable shake-to-close. This feature is provided as a personal privacy tool. You are solely responsible for how you use Discreet Mode. MysticLand is not responsible for any consequences arising from your use of this feature.</p>
+
+  <!-- 13 -->
+  <h2><span class="section-number">13</span> Governing Law & Disputes</h2>
+  <p>These Terms are governed by and construed in accordance with the laws of India. Any disputes arising from these Terms or your use of MysticLand shall be subject to the exclusive jurisdiction of the courts of India.</p>
+  <p>Before initiating any legal proceedings, we encourage you to first contact us at mysticland.app@gmail.com to resolve the dispute amicably.</p>
+
+  <!-- 14 -->
+  <h2><span class="section-number">14</span> Changes to Terms</h2>
+  <p>We may update these Terms at any time. When we make significant changes, we will notify you through the App and update the "Last Updated" date at the top of this page. Continued use of MysticLand after changes constitutes your acceptance of the revised Terms.</p>
+
+  <!-- 15 -->
+  <h2><span class="section-number">15</span> Severability</h2>
+  <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that the Terms will otherwise remain in full force and effect.</p>
+
+  <!-- Contact -->
+  <div class="contact-box">
+    <h2>Contact Us</h2>
+    <p>For any questions about these Terms, please contact:</p>
+    <br/>
+    <p>📧 <a href="mailto:mysticland.app@gmail.com">mysticland.app@gmail.com</a></p>
+    <br/>
+    <p style="font-size:13px; color:#9E8B75;">We aim to respond to all queries within 72 hours.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 MysticLand. All rights reserved.</p>
+  <br/>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms & Conditions</a>
+  <a href="mailto:mysticland.app@gmail.com">Contact</a>
+</footer>
+
+</body>
+</html>
