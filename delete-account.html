@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delete Account — MysticLand</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #0D0A1A;
+      color: #F0EAFF;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1A1030, #0D0A1A);
+      border-bottom: 1px solid #C9A84C44;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    header .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #C9A84C;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    header .subtitle {
+      font-size: 14px;
+      color: #9E8B75;
+      font-style: italic;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .page-title {
+      font-size: 30px;
+      color: #C9A84C;
+      font-weight: bold;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .last-updated {
+      font-size: 13px;
+      color: #9E8B75;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #251840;
+    }
+
+    .intro-box {
+      background: #1A1030;
+      border-left: 4px solid #C9A84C;
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      font-size: 15px;
+      color: #D0C8E8;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #C9A84C;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #251840;
+    }
+
+    p {
+      font-size: 15px;
+      color: #D0C8E8;
+      margin-bottom: 14px;
+    }
+
+    /* Steps */
+    .steps {
+      margin: 20px 0 32px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: #1A1030;
+      border: 1px solid #C9A84C33;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+
+    .step-number {
+      background: #C9A84C;
+      color: #0D0A1A;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .step-text {
+      font-size: 15px;
+      color: #F0EAFF;
+      padding-top: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .step-text strong {
+      color: #C9A84C;
+    }
+
+    /* Data deletion table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .data-table th {
+      background: #251840;
+      color: #C9A84C;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #D0C8E8;
+      font-family: Arial, sans-serif;
+      border-bottom: 1px solid #251840;
+      vertical-align: top;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: #1A1030;
+    }
+
+    .data-table tr:nth-child(odd) td {
+      background: #150D25;
+    }
+
+    .badge-deleted {
+      display: inline-block;
+      background: #1A3A1A;
+      border: 1px solid #27AE6055;
+      color: #27AE60;
+      border-radius: 20px;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+    }
+
+    .badge-retained {
+      display: inline-block;
+      background: #2A1A0A;
+      border: 1px solid #E05A0055;
+      color: #E8965A;
+      border-radius: 20px;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+    }
+
+    .warning-box {
+      background: #1A1030;
+      border: 1px solid #C0392B55;
+      border-left: 4px solid #C0392B;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .warning-box p {
+      color: #F5C6C6;
+      margin-bottom: 0;
+    }
+
+    .highlight-box {
+      background: #1A1030;
+      border: 1px solid #C9A84C33;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+
+    /* Contact box */
+    .contact-box {
+      background: linear-gradient(135deg, #1A1030, #251840);
+      border: 1px solid #C9A84C55;
+      border-radius: 12px;
+      padding: 28px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      border-bottom: none;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .contact-box a {
+      color: #C9A84C;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Screenshot guide */
+    .screenshot-guide {
+      background: #1A1030;
+      border: 1px solid #7B2FFF44;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .screenshot-guide h3 {
+      color: #C9A84C;
+      font-size: 16px;
+      margin-bottom: 16px;
+      font-family: Arial, sans-serif;
+    }
+
+    .path-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .path-item {
+      background: #251840;
+      color: #F0EAFF;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-family: Arial, sans-serif;
+    }
+
+    .path-arrow {
+      color: #C9A84C;
+      font-size: 16px;
+    }
+
+    .section-number {
+      display: inline-block;
+      background: #C9A84C;
+      color: #0D0A1A;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 26px;
+      margin-right: 10px;
+      vertical-align: middle;
+      font-family: Arial, sans-serif;
+    }
+
+    footer {
+      background: #1A1030;
+      border-top: 1px solid #C9A84C22;
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: #9E8B75;
+      margin-top: 64px;
+      font-family: Arial, sans-serif;
+    }
+
+    footer a {
+      color: #C9A84C;
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    @media (max-width: 600px) {
+      .page-title { font-size: 24px; }
+      h2 { font-size: 18px; }
+      .container { padding: 32px 16px; }
+      .step { flex-direction: column; gap: 10px; }
+      .path-row { gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🎭 MysticLand</div>
+  <div class="subtitle">Where mystery meets desire</div>
+</header>
+
+<div class="container">
+
+  <div class="page-title">Delete Your Account</div>
+  <div class="last-updated">Last Updated: August 1, 2026</div>
+
+  <div class="intro-box">
+    You can permanently delete your MysticLand account at any time — directly from within the app or by contacting our support team. This page explains exactly how to delete your account and what happens to your data when you do.
+  </div>
+
+  <!-- HOW TO DELETE -->
+  <h2><span class="section-number">1</span> How to Delete Your Account</h2>
+
+  <p>The easiest way to delete your account is directly inside the MysticLand app:</p>
+
+  <div class="screenshot-guide">
+    <h3>📍 Navigate to Account Deletion</h3>
+    <div class="path-row">
+      <span class="path-item">Open MysticLand App</span>
+      <span class="path-arrow">→</span>
+      <span class="path-item">😈 Profile (bottom right)</span>
+      <span class="path-arrow">→</span>
+      <span class="path-item">⚙️ Settings</span>
+      <span class="path-arrow">→</span>
+      <span class="path-item">🗑️ Delete Account Permanently</span>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-text">Open the <strong>MysticLand app</strong> on your Android phone and sign in to your account.</div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-text">Tap the <strong>😈 Profile icon</strong> in the bottom right corner of the navigation bar.</div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-text">Tap the <strong>⚙️ Settings icon</strong> in the top left corner of your profile screen.</div>
+    </div>
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-text">Scroll down to the <strong>Danger Zone</strong> section (highlighted in red).</div>
+    </div>
+    <div class="step">
+      <div class="step-number">5</div>
+      <div class="step-text">Tap <strong>Delete Account Permanently</strong>.</div>
+    </div>
+    <div class="step">
+      <div class="step-number">6</div>
+      <div class="step-text">A confirmation dialog will appear. Read the warning carefully and tap <strong>Yes, Delete My Account</strong> to confirm.</div>
+    </div>
+    <div class="step">
+      <div class="step-number">7</div>
+      <div class="step-text">Your account deletion request is submitted immediately. <strong>All your data will be permanently deleted within 30 days.</strong></div>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <p>⛔ <strong>This action is permanent and cannot be undone.</strong> Once your account is deleted, you will not be able to recover your profile, photos, matches, or chat history. You will need to create a new account if you wish to use MysticLand again.</p>
+  </div>
+
+  <!-- WHAT GETS DELETED -->
+  <h2><span class="section-number">2</span> What Data Gets Deleted</h2>
+
+  <p>When you delete your MysticLand account, the following data is permanently removed from our systems:</p>
+
+  <table class="data-table">
+    <tr>
+      <th>Data Type</th>
+      <th>What Happens</th>
+      <th>Timeframe</th>
+    </tr>
+    <tr>
+      <td>Profile information<br/><small>(username, gender, age, height, city)</small></td>
+      <td><span class="badge-deleted">✓ Permanently Deleted</span></td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td>Profile photos</td>
+      <td><span class="badge-deleted">✓ Permanently Deleted</span></td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td>Private photos</td>
+      <td><span class="badge-deleted">✓ Permanently Deleted</span></td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td>Desire posts</td>
+      <td><span class="badge-deleted">✓ Permanently Deleted</span></td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td>Turn-On preferences</td>
+      <td><span class="badge-deleted">✓ Permanently Deleted</span></td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td>Likes sent and received</td>
+      <td><span class="badge-deleted">✓ Permanently Deleted</span></td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td>Matches</td>
+      <td><span class="badge-deleted">✓ Permanently Deleted</span></td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td>Chat messages</td>
+      <td><span class="badge-deleted">✓ Permanently Deleted</span></td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td>Face verification result</td>
+      <td><span class="badge-deleted">✓ Permanently Deleted</span></td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td>Location data</td>
+      <td><span class="badge-deleted">✓ Permanently Deleted</span></td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td>Google account link</td>
+      <td><span class="badge-deleted">✓ Permanently Deleted</span></td>
+      <td>Within 30 days</td>
+    </tr>
+    <tr>
+      <td>Payment / transaction records</td>
+      <td><span class="badge-retained">⏳ Retained 7 Years</span></td>
+      <td>Required by Indian tax law</td>
+    </tr>
+  </table>
+
+  <div class="highlight-box">
+    <p>💡 <strong>Note on Face Verification:</strong> Your face verification selfie is <strong>never stored</strong> on our servers at any point — it is only used for the one-time AI check and discarded immediately. There is nothing to delete.</p>
+  </div>
+
+  <!-- SUBSCRIPTION -->
+  <h2><span class="section-number">3</span> What Happens to Your Subscription</h2>
+
+  <p>If you have an active premium subscription when you delete your account:</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-text">Your MysticLand account and all data will be deleted as described above.</div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-text">Your subscription will <strong>not be automatically cancelled</strong> — you must cancel it separately through Google Play Store to stop future charges.</div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-text">To cancel your subscription: Open <strong>Google Play Store → Subscriptions → MysticLand → Cancel Subscription</strong>.</div>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <p>⚠️ <strong>Important:</strong> Deleting your MysticLand account does NOT automatically cancel your Google Play subscription. Please cancel your subscription separately to avoid future charges.</p>
+  </div>
+
+  <!-- CANNOT ACCESS APP -->
+  <h2><span class="section-number">4</span> Can't Access the App?</h2>
+
+  <p>If you are unable to access the MysticLand app to delete your account (for example, if you have lost access to your Google account), you can request account deletion by emailing us directly:</p>
+
+  <div class="highlight-box">
+    <p>📧 Email us at: <a href="mailto:mysticland.app@gmail.com" style="color:#C9A84C; font-weight:bold;">mysticland.app@gmail.com</a></p>
+    <br/>
+    <p>Please include in your email:</p>
+    <br/>
+    <p>• Subject: <strong>Account Deletion Request</strong><br/>
+    • The Google email address linked to your MysticLand account<br/>
+    • Your MysticLand anonymous username (if you remember it)<br/>
+    • A brief reason for the deletion request (optional)</p>
+    <br/>
+    <p>We will process your request and confirm deletion within <strong>7 business days</strong>.</p>
+  </div>
+
+  <!-- YOUR RIGHTS -->
+  <h2><span class="section-number">5</span> Your Rights Under Indian Law</h2>
+
+  <p>Under India's Digital Personal Data Protection Act, 2023 (DPDP Act), you have the right to:</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">✓</div>
+      <div class="step-text"><strong>Erasure:</strong> Request permanent deletion of all your personal data from MysticLand's systems.</div>
+    </div>
+    <div class="step">
+      <div class="step-number">✓</div>
+      <div class="step-text"><strong>Access:</strong> Request a copy of the personal data we hold about you before deletion.</div>
+    </div>
+    <div class="step">
+      <div class="step-number">✓</div>
+      <div class="step-text"><strong>Grievance Redressal:</strong> Contact us at any time to address privacy concerns.</div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-box">
+    <h2>Need Help?</h2>
+    <p>If you have any questions about account deletion or your data, our support team is here to help.</p>
+    <br/>
+    <p>📧 <a href="mailto:mysticland.app@gmail.com">mysticland.app@gmail.com</a></p>
+    <br/>
+    <p style="font-size:13px; color:#9E8B75;">We respond to all account deletion requests within 7 business days.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 MysticLand. All rights reserved.</p>
+  <br/>
+  <a href="index.html">Home</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms-and-conditions.html">Terms & Conditions</a>
+  <a href="delete-account.html">Delete Account</a>
+  <a href="mailto:mysticland.app@gmail.com">Contact</a>
+</footer>
+
+</body>
+</html>
